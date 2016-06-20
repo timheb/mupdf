@@ -134,6 +134,14 @@ AR = x86_64-w64-mingw32-ar
 CROSSCOMPILE=yes
 endif
 
+ifeq "$(OS)" "android"
+CC = arm-linux-androideabi-gcc
+LD = arm-linux-androideabi-gcc
+AR = arm-linux-androideabi-ar
+CFLAGS += -O3
+CROSSCOMPILE=yes
+endif
+
 # Most variables when building for iOS are set up in ios/build_libs.sh,
 # which is called from the Xcode project as a "Run Script" build step.
 # The following section works for both device and simulator builds.

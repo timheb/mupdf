@@ -2,7 +2,7 @@
 
 build ?= debug
 
-OUT := build/$(build)
+OUT := build/$(OS)/$(build)
 GEN := generated
 
 default: all
