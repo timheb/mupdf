@@ -142,6 +142,14 @@ CFLAGS += -O3
 CROSSCOMPILE=yes
 endif
 
+ifeq "$(OS)" "raspberry"
+CC = arm-linux-gnueabihf-gcc
+LD = arm-linux-gnueabihf-gcc
+AR = arm-linux-gnueabihf-ar
+CFLAGS += -O3 
+CROSSCOMPILE=yes
+endif
+
 # Most variables when building for iOS are set up in ios/build_libs.sh,
 # which is called from the Xcode project as a "Run Script" build step.
 # The following section works for both device and simulator builds.
